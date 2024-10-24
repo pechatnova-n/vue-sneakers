@@ -1,25 +1,27 @@
-<script>
-export default {
-  data() {
-    return {
-      count: 0,
-    }
-  },
-  methods: {
-    increment() {
-      this.count++;
-    }
-  }
-}
+<script setup>
+  const props = defineProps({
+    title: String,
+    price: Number,
+    isAdded: Boolean,
+  })
+
 </script>
 
 <template>
-  <p>{{  count  }}</p>
-  <button @click="increment">+</button>
-  <input v-model="count" />
+  <div class="product">
+    <h2>Товар: {{ props.title }}</h2>
+    <h3>Цена: {{ props.price }}</h3>
+    <h3>Добавлен: {{ isAdded }}</h3>
+    <slot></slot>
+  </div>
 </template>
 
 <style scoped>
-
+  .product {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
 </style> 
 
