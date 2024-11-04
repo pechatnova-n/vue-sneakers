@@ -28,6 +28,5 @@ const onClickFavourite = () => {
     :onClickAdd="onClickAdd"
     :onClickFavourite="onClickFavourite"
     />
-    <Card />
   </div>
 </template>
